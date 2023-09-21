@@ -2,9 +2,14 @@ import React from 'react';
 
 import './Footer.css';
 
+import {useLocation} from 'react-router-dom';
+
 const Footer = () => {
+  const pathNames = ['/', '/movies', '/saved-movies'];
+  const location = useLocation();
 
   return ( <> {
+    pathNames.indexOf(location.pathname) !== -1 && (
       <footer className='footer section'>
         <h3 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h3>
         <div className='footer__copy-nav'>
@@ -22,13 +27,14 @@ const Footer = () => {
                 <a
                   rel='noreferrer'
                   target='_blank'
-                  href='https://github.com/alexeylavrinenkov/movies-explorer-frontend'
+                  href='https://github.com/IgorDedul/movies-explorer-frontend'
                   className="link">GitHub</a>
               </li>
             </ul>
           </nav>
         </div>
       </footer>
+    )  
   } </>
   );
 };
