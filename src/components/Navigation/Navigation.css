@@ -34,8 +34,11 @@
   }
   
   .menu__links {
+    padding-left: 20px;
+    width: 80vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   
   .menu__links_opened {
