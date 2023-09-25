@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import './Profile.css';
 
+import { Link } from 'react-router-dom';
+
 const Profile = () => {
   
   return (
@@ -38,7 +40,10 @@ const Profile = () => {
         <div className='profile__bottom'>
           <>
             <button type='button' className='profile__button profile__edit-button link'>Редактировать</button>
-            <button type='button' className='profile__button profile__sign-out-button link'>Выйти из аккаунта</button>
+            <Link className='profile__button profile__sign-out-button link' to='/'>
+              Выйти из аккаунта
+            </Link>
+            
           </>
         </div>
       </form>
