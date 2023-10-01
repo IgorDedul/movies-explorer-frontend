@@ -37,11 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 44px;
-    flex-grow: 1;
-
-    /**padding-left: 20px;
-    width: 90vh;**/
+    width: 80vw;
   }
   
   .menu__links_opened {

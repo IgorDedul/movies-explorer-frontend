@@ -8,10 +8,6 @@ const SearchForm = () => {
     <section className='search section' aria-label="Поиск">
       <form name='search' className='search__form' noValidate>
         <div className='search__input-container'>
-          <button 
-            type='submit' 
-            className='search__magnifier' 
-          />
           <input
             type='text'
             name='searchText'
