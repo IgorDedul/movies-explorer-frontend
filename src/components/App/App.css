@@ -15,16 +15,21 @@
   text-rendering: optimizeLegibility;
 }
 
-.content {
+.app {
   min-height: 100vh;
   width: 100%;
+  background: #202020;
+  box-sizing: border-box;
+}
+
+.content {
   max-width: 1280px;
+  min-height: 100vh;
   min-width: 320px;
   margin: 0 auto;
   padding: 0;
   display: flex;
   flex-direction: column;
-  background: #202020;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   color: white;
   font-style: normal;
@@ -84,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .section {
     padding: 0 14px;
   }

@@ -11,7 +11,7 @@
     background-position: center 40%;
     background-size: 320px;
   }
-  
+
   .promo__title {
     max-width: 730px;
     margin: 0 auto 43px;
@@ -21,26 +21,26 @@
     text-align: center;
     letter-spacing: -0.04em;
   }
-  
+
   @media screen and (max-width: 1024px) {
     .promo {
       min-height: 784px;
       background-position: center 48.5%;
     }
-  
+
     .promo__title {
       margin: 0 auto 20px;
     }
   }
-  
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 500px) {
     .promo {
       padding: 18px 10px;
       min-height: 570px;
       background-size: 248px;
       background-position: center 45%;
     }
-  
+
     .promo__title {
       margin: 0 auto 35px;
       max-width: 300px;

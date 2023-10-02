@@ -10,9 +10,9 @@ const MoviesCardList = () => {
   return (
     <>
       <section className='movies-card-list section' aria-label="Фильмы">
-        <ul className='movies-card-list__list list'>
+        {/*<ul className='movies-card-list__list list'>*/}
           <MoviesCard/>
-        </ul>
+        {/*</ul>*/}
       </section>
        <More/>
     </>

@@ -2,8 +2,10 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+    flex-basis: 100%;
+
   }
-  
+
   .menu__burger-button {
     display: none;
     padding: 0;
@@ -16,7 +18,7 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .menu__close-button {
     display: none;
     width: 22px;
@@ -32,45 +34,47 @@
     padding: 0;
     border: none;
   }
-  
+.menu__container { flex-basis: 100%; }
   .menu__links {
+    flex-basis: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80vw;
+    /*width: 80vw;*/
   }
-  
+
   .menu__links_opened {
     display: flex;
   }
-  
+
   .menu__page-links {
     margin: 0 50px 0 0;
     display: flex;
     align-items: center;
   }
-  
+
   .menu__page-link:last-of-type {
     margin: 0;
   }
-  
+
   .menu__links-item {
     margin: 0 20px 0 0;
     font-weight: 400;
+    font-size: 13px;
   }
-  
+
   .menu__links-item:last-of-type {
     margin: 0;
   }
-  
+
   .menu__link_active {
     font-weight: 500;
   }
-  
+
   .menu__links-item_type_burger {
     display: none;
   }
-  
+
   .menu__account-block {
     display: flex;
     justify-content: center;
@@ -84,22 +88,22 @@
     cursor: pointer;
     color: white;
   }
-  
+
   .menu__account-block:hover {
     background-color: #313131;
     text-decoration: none;
   }
-  
+
   .menu__account-text {
     margin: 0 7px 0 0;
     font-weight: 500;
     font-size: 13px;
   }
-  
+
   .menu__account-text_active {
     font-weight: 500;
   }
-  
+
   .menu__account-image {
     width: 26px;
     height: 26px;
@@ -111,27 +115,27 @@
     border-radius: 100%;
     transition: all .3s ease-in-out;
   }
-  
+
   .menu__account-block:hover .menu__account-image {
     background-color: #454545;
   }
-  
+
   .menu__unauth-links {
     display: flex;
     align-items: center;
   }
-  
+
   .menu__unauth-links-item {
     margin: 0 30px 0 0;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.4;
   }
-  
+
   .menu__unauth-links-item:last-child {
     margin: 0;
   }
-  
+
   .menu__unauth-link_type_signin {
     box-sizing: border-box;
     padding: 8px 20px;
@@ -139,16 +143,17 @@
     border-radius: 3px;
     color: black;
   }
-  
+
   @media screen and (max-width: 768px) {
     .menu {
       font-size: 18px;
+      flex-basis: auto;
     }
-  
+
     .menu__burger-button {
       display: block;
     }
-  
+
     .menu__container {
       position: fixed;
       display: flex;
@@ -165,12 +170,12 @@
       visibility: hidden;
       transition: visibility .2s linear, opacity .2s linear;
     }
-  
+
     .menu__container_opened {
       opacity: 1;
       visibility: visible;
     }
-  
+
     .menu__links {
       margin: 0 0 0 auto;
       display: none;
@@ -184,67 +189,67 @@
       flex-direction: column;
       justify-content: space-between;
     }
-  
+
     .menu__links-item_type_burger {
       display: block;
     }
-  
+
     .menu__link {
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
     }
-  
+
     .menu__page-links {
       margin: 0 0 50px;
       flex-direction: column;
     }
-  
+
     .menu__links-item {
       margin: 0 0 22px 0;
       font-weight: 500;
     }
-  
+
     .menu__link_active {
       font-weight: 500;
       border-bottom: 2px solid white;
     }
-  
+
     .menu__account-text_active {
       font-weight: 500;
       border-bottom: 2px solid white;
     }
-  
+
     .menu__close-button {
       display: block;
     }
   }
-  
+
   @media screen and (max-width: 540px) {
     .menu__burger-button {
       width: 40px;
       height: 40px;
     }
-  
+
     .menu__links {
       margin: 0;
       width: 100%;
       padding: 144px 10px 46px;
     }
-  
+
     .menu__links-item {
       margin: 0 0 24px 0;
     }
-  
+
     .menu__close-button {
       top: 14px;
       right: 14px;
     }
-  
+
     .menu__unauth-links-item {
       margin: 0 14px 0 0;
       font-size: 10px;
     }
-  
+
     .menu__unauth-link_type_signin {
       min-height: 26px;
       padding: 7px 12px;

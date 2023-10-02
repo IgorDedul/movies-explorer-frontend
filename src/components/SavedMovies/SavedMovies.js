@@ -4,11 +4,11 @@ import SearchForm from './../Movies/SearchForm/SearchForm';
 import MoviesCardList from './MoviesCardList/MoviesCardList'
 
 const SavedMovies = () => {
-  
+
   return (
-    <main className='saved-movies'>
+    <main className='movies'>
       <SearchForm/>
-      <p className='movies__not-found'></p>
+      <p className='movies__notFound'></p>
       <MoviesCardList/>
       </main>
   );

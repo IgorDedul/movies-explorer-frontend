@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './SearchForm.css';
 
 const SearchForm = () => {
-  
+
   return (
     <section className='search section' aria-label="Поиск">
       <form name='search' className='search__form' noValidate>
@@ -15,8 +15,8 @@ const SearchForm = () => {
             className='search__input'
             required
           />
-          <button 
-            type='submit' 
+          <button
+            type='submit'
             className='search__button'
           />
         </div>

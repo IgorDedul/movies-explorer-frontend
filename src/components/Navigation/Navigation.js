@@ -34,13 +34,14 @@ const Navigation = () => {
         ? ( <> <button
           type='button'
           onClick={handleBurgerButtonClick}
-          className='menu__burger-button link'/> 
-        <div 
+          className='menu__burger-button link'/>
+        <div
         className = {
           `menu__container ${isBurgerMenuOpen
             ? 'menu__container_opened'
             : ''}`
-        }> <div className='menu__links'>
+        }>
+          <div className='menu__links'>
           <button
             type='button'
             onClick={handleCloseButtonClick}
