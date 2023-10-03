@@ -59,6 +59,7 @@
   }
 
   .auth__submit-button {
+    cursor: pointer;
     width: 100%;
     margin: 0 auto 16px;
     padding: 13px 20px;
@@ -72,7 +73,11 @@
     border-radius: 3px;
   }
 
-  .auth__submit-button_inactive {
+.auth__submit-button:hover {
+    opacity: 0.8;
+  }
+
+.auth__submit-button_inactive {
     background: #262626;
     color: #525252;
   }
@@ -108,6 +113,7 @@
     .auth {
       width: 100%;
       padding: 56px 30px 30px;
+      margin-top: 0;
     }
 
     .auth__logo-link {

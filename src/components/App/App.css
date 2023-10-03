@@ -23,7 +23,7 @@
 }
 
 .content {
-  max-width: 1280px;
+  /*max-width: 1280px;*/
   min-height: 100vh;
   min-width: 320px;
   margin: 0 auto;
@@ -91,7 +91,9 @@
 
 @media screen and (max-width: 480px) {
   .section {
+    box-sizing: border-box;
     padding: 0 14px;
+
   }
 
   .section_type_main {

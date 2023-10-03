@@ -8,6 +8,8 @@ const PasswordAuthInput = () => {
       type='password'
       name='password'
       placeholder='Введите пароль'
+      minLength={6}
+      maxLength={30}
       required
     />
   );

@@ -96,12 +96,12 @@
     }
 
     .movies-card__title {
-      max-width: 260px;
+      /*max-width: calc(100% - 100px);*/
       margin: 0 21px 0 0;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 500px) {
     .movies-card {
       height: 237px;
     }

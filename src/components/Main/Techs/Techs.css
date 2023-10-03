@@ -48,7 +48,7 @@
   }
 
   .techs__list-item:last-child {
-    margin: 0;
+    margin-right: 0;
   }
 
   .techs__item-text {
@@ -80,6 +80,15 @@
 
     .techs__item-text {
       font-size: 12px;
+    }
+
+    .techs__list {
+      /*max-width: 178px;*/
+      flex-wrap: wrap;
+    }
+
+    .techs__list-item {
+      margin-top: 10px;
     }
   }
 
