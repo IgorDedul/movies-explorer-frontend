@@ -13,6 +13,12 @@ import Login from './../Login/Login';
 import Register from './../Register/Register';
 import PageNotFound from '../PageNotFound/PageNotFound';
 
+import { LoggedInContext } from './../../contexts/LoggedInContext';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import ProtectedRoute from './../ProtectedRoute/ProtectedRoute';
+import mainApi from '../../utils/MainApi';
+import Popup from '../Popup/Popup';
+
 const App = () => {
 
 
