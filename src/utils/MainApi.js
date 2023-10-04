@@ -1,0 +1,136 @@
+import { MAIN_BASE_URL } from "./constants";
+
+class MainApi {
+  constructor({ baseUrl, headers }) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
+  }
+
+  // Проверка запроса
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+
+  // Передача токена в заголовок
+  _getHeaders() {
+    const token = localStorage.getItem('token');
+
+    return {
+      'Authorization': `Bearer ${token}`,
+      ...this._headers,
+    };
+  } 
+  
+  // Регистрация пользователя
+  register({ name, email, password }) {
+    return fetch(`${this._baseUrl}/signup`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name, email, password })
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  };
+  
+  // Авторизация пользователя
+  login({ email, password }) {
+    return fetch(`${this._baseUrl}/signin`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  };
+  
+  // Проверка токена
+  checkToken(token) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  };
+
+  // Получение данных о пользователе
+  getUser() {
+    return fetch(`${this._baseUrl}/users/me`, {
+      headers: this._getHeaders(),
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  }
+
+  // Обновление данных пользователя
+  updateUser({ name, email }) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: 'PATCH',
+      headers: this._getHeaders(),
+      body: JSON.stringify({ name, email })
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  }
+
+  // Получение сохранённых фильмов
+  getSavedMovies() {
+    return fetch(`${this._baseUrl}/movies`, {
+      headers: this._getHeaders(),
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  }
+
+  // Сохранение фильмов
+  saveMovie(movie) {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'POST',
+      headers: this._getHeaders(),
+      body: JSON.stringify(movie)
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  }
+
+  // Сброс сохранённого фильма
+  unsaveMovie(movieId) {
+    return fetch(`${this._baseUrl}/movies/${movieId}`, {
+      method: 'DELETE',
+      headers: this._getHeaders(),
+    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
+  }
+};
+
+const mainApi = new MainApi({
+  baseUrl: MAIN_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  }
+});
+
+export default mainApi;
