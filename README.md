@@ -29,7 +29,9 @@ _____________________________________________________________
 13. Mongoose/
 _____________________________________________________________
 
-**Ссылка на GitHub:** https://github.com/IgorDedul/movies-explorer-api/tree/level-1
+**Ссылка на GitHub:** 
+https://github.com/IgorDedul/movies-explorer-api/tree/level-1
+https://github.com/IgorDedul/movies-explorer-frontend/tree/level-2
 _____________________________________________________________
 
 **Выполнено: Дедуль Игорь**
@@ -44,7 +46,8 @@ _____________________________________________________________
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* Тема: dark-3
+* [Ссылка на макет в Figma](https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=24-2874&mode=design&t=Q0NEGLfVZFE0u76A-0)
 
 **Картинки**
 
