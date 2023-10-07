@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthInput from './../AuthInput/AuthInput';
 
-const PasswordAuthInput = () => {
+const PasswordAuthInput = ({...validationParams}) => {
   return (
     <AuthInput
       labelText='Пароль'
@@ -11,6 +11,7 @@ const PasswordAuthInput = () => {
       minLength={6}
       maxLength={30}
       required
+      {...validationParams}
     />
   );
 };

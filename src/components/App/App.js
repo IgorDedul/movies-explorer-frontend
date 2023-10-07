@@ -13,11 +13,13 @@ import Login from './../Login/Login';
 import Register from './../Register/Register';
 import PageNotFound from '../PageNotFound/PageNotFound';
 
+import Popup from '../Popup/Popup';
+
 import { LoggedInContext } from './../../contexts/LoggedInContext';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import ProtectedRoute from './../ProtectedRoute/ProtectedRoute';
 import mainApi from '../../utils/MainApi';
-import Popup from '../Popup/Popup';
+
 
 const App = () => {
 
@@ -141,60 +143,69 @@ const App = () => {
     }
   }, [isOpenPopup]);
 
-  // Исключение хедера из указанных форм
-  const RouteWrapper = ({path, element}) => {
-    const routesWithoutHeader = [
-      '/signin',
-      '/signup',
-      '*',
-    ]
-      return (
-        <>
-          {!routesWithoutHeader.includes(path) && <Header/>}
-          {element}
-        </>
-      )
-  }
-
   return (
     <LoggedInContext.Provider value={loggedIn}>
     <CurrentUserContext.Provider value={currentUser}>
     <div className={"app"}>
       <div className='content'>
 
+        <Header />
         <Routes>
-          <Route
+          
+        <Route
             exact path="/movies"
             element={
-              <RouteWrapper path={"/movies"} element={<Movies />} />
+              <ProtectedRoute>
+                <Movies
+                  onSaveMovie={handleSaveMovie}
+                  onUnsaveMovie={handleUnsaveMovie}
+                  savedMovies={savedMovies}
+                />
+              </ProtectedRoute>
             }
           />
-          <Route exact path={"/saved-movies"} element={
-            <RouteWrapper path={"/saved-movies"} element={<SavedMovies />} /> }/>
-
-          <Route exact path="/profile" element={
-            <RouteWrapper path={"/profile"} element={<Profile />} />
-          } />
-
-          <Route exact path="/signin" element={
-            <RouteWrapper path={"/signin"} element={<Login />} />
-          }/>
-
-          <Route exact path="/signup" element={
-            <RouteWrapper path={"/signup"} element={<Register />} />
-          }
+          <Route
+            exact path="/saved-movies"
+            element={
+              <ProtectedRoute>
+                <SavedMovies
+                  savedMovies={savedMovies}
+                  onUnsaveMovie={handleUnsaveMovie}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            exact path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile
+                  onUpdateUser={handleUpdateUser}
+                  onLogout={handleLogout}
+                />
+              </ProtectedRoute>
+            }
           />
 
-          <Route exact path="/" element={
-            <RouteWrapper path={"/"} element={<Main />} />
-          }/>
+          <Route
+            exact path="/"
+            element={<Main />}
+          />
+          <Route
+            exact path="/signin"
+            element={<Login onLogin={handleLogin} />}
+          />
+          <Route
+            exact path="/signup"
+            element={<Register onLogin={handleLogin} />}
+          />
 
-          <Route path="*" element={
-            <RouteWrapper path={"*"} element={<PageNotFound />} />
-          } />
+          <Route path="*" element={<PageNotFound />} />
 
         </Routes>
         <Footer />
+
+        <Popup text={popupTitle} isOpen={isOpenPopup} onClose={closePopup} />
 
       </div>
     </div>
