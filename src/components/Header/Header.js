@@ -6,18 +6,21 @@ import logo from '../../images/logo.svg';
 
 import Navigation from './../Navigation/Navigation';
 import { Link, useLocation } from 'react-router-dom';
+import {HEADER_PATH_NAMES} from '../../utils/constants';
 
 const Header = () => {
   const location = useLocation();
 
-  return (
+  return ( <> {
+    HEADER_PATH_NAMES.indexOf(location.pathname) !== -1 && (
       <header className={`header section ${location.pathname === '/' ? 'header_theme_main' : ''}`}>
         <Link className='link header__link' to='/'>
           <img className='image header__logo' src={logo} alt='Логотип сайта Movies-Explorer'/>
         </Link>
         <Navigation/>
       </header>
-
+    )
+  } </>
   );
 };
 
