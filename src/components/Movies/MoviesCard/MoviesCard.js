@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './MoviesCard.css';
-import '../MoviesCardList/MoviesCardList.css';
+//import '../MoviesCardList/MoviesCardList.css';
 
+import formatMovieDuration from '../../../utils/formatMovieDuration';
+
+/**
 import film from '../../../images/Film/film.jpg';
 import film1 from '../../../images/Film/film1.jpg';
 import film2 from '../../../images/Film/film2.jpg';
@@ -14,10 +17,44 @@ import film8 from '../../../images/Film/film8.jpg';
 import film9 from '../../../images/Film/film9.jpg';
 import film10 from '../../../images/Film/film10.jpg';
 import film11 from '../../../images/Film/film11.jpg';
+**/
 
-const MoviesCard = () => {
+const MoviesCard = ({ movie, savedMovies, onSaveButtonClick }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  let isSaved;
+  if (savedMovies) {
+    isSaved = savedMovies.some((savedMovie) => savedMovie.movieId === movie.movieId);
+  }
+
+  async function handleSaveButtonClick() {
+    setIsLoading(true);
+
+    await onSaveButtonClick(movie);
+
+    setIsLoading(false);
+  }
   
   return (
+
+    <li className='movies-card'>
+      <a
+        href={movie.trailerLink}
+        rel='noreferrer'
+        target='_blank'
+        className='movies-card__link link'
+      >
+          <img src={movie.image} alt={movie.nameRU} className='movies-card__img img'/>
+      </a>
+      <div className='movies-card__container'>
+        <div className='movies-card__title-container'>
+          <h3 className='movies-card__title'>{movie.nameRU}</h3>
+          <button type='button' className={`movies-card__like-button link ${isSaved ? 'movies-card__like-button_active' : ''}`} onClick={handleSaveButtonClick} disabled={isLoading} />
+        </div>
+        <p className='movies-card__duration'>{formatMovieDuration(movie.duration)}</p>
+      </div>
+    </li>
+
+    /**
     <ul className='movies-card-list__list list'>
       <li className='movies-card'> 
         <a
@@ -236,6 +273,7 @@ const MoviesCard = () => {
       </li>
 
     </ul>
+    **/
   );
 };
 

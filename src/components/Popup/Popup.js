@@ -5,10 +5,12 @@ const Popup = ({ text, isOpen, onClose }) => {
     onClose();
   };
 
+  // Закрытие кликом по оверлею
   const handleCloseByOverlayClick = () => {
     onClose();
   };
 
+  // Обработчик клика по контейнеру
   const handlePopupContainerClick = (evt) => {
     evt.stopPropagation();
   };

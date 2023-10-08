@@ -30,8 +30,12 @@ _____________________________________________________________
 _____________________________________________________________
 
 **Ссылка на GitHub:** 
-https://github.com/IgorDedul/movies-explorer-api/tree/level-1
-https://github.com/IgorDedul/movies-explorer-frontend/tree/level-2
+
+Бэкенд: https://github.com/IgorDedul/movies-explorer-api/tree/level-1
+
+Пул реквест с вёрсткой: https://github.com/IgorDedul/movies-explorer-frontend/pull/1
+
+Пул реквест с функционалом: https://github.com/IgorDedul/movies-explorer-frontend/pull/2
 _____________________________________________________________
 
 **Выполнено: Дедуль Игорь**
