@@ -11,14 +11,17 @@ const useForm = (initialValues = {}, initialIsValid = false) => {
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(initialIsValid);
 
+
   const handleChange = (evt) => {
     const input = evt.target;
     const name = input.name;
     const value = input.type === 'checkbox' ? input.checked : input.value;
+    // console.log(input.type, name, value, validateEmail(value))
 
-    switch (input.type) {
+    switch (name) {
       case 'email':
         const errorMessage = validateEmail(value);
+
         setErrors((errors) => ({ ...errors, [name]: errorMessage }));
         input.setCustomValidity(errorMessage);
         break;
