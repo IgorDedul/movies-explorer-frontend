@@ -19,6 +19,7 @@
     /*display: flex;*/
     /*flex-direction: column;*/
     margin-bottom: 21px;
+
   }
 
   .search__magnifier {
@@ -40,6 +41,8 @@
     box-sizing: border-box;
     height: 46px;
     padding: 10px 0;
+    padding-left: 46px;
+
     margin: 0;
     border: none;
     border-radius: 30px;
@@ -54,12 +57,12 @@
 
   .search__input::placeholder {
     text-align: left;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
     color: #8B8B8B;
   }
 
   .search__input:focus {
-    padding-left: 20px;
+    /*padding-left: 20px;*/
     outline: none;
     border-bottom: 1px solid #777;
     box-shadow: 0 0 0px 1000px #202020 inset;

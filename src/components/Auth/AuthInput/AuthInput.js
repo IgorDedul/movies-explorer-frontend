@@ -15,7 +15,7 @@ const AuthInput = ({
         disabled={isLoading}
         {...inputAttributes} 
       />
-      <span className='auth__input-error'></span>
+      <span className='auth__input-error'>{error}</span>
     </label>
   );
 };

@@ -36,7 +36,7 @@ const Portfolio = () => {
           <a
             rel='noreferrer'
             target='_blank'
-            href='https://github.com/alexeylavrinenkov/how-to-learn'
+            href='https://github.com/IgorDedul/how-to-learn'
             className='portfolio__link link'
           >
             <h3 className='portfolio__link-title'>
